@@ -1,0 +1,2 @@
+# JSDIS
+JavaScript Dictionary Server
