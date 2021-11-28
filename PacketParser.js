@@ -1,6 +1,6 @@
 module.exports = PacketParser = (packet) => {
     let packet_type = packet.substring(0, 3).trim();
-    if (packet_type != "set" && packet_type != "get" && packet_type != "del" & packet_type != "siz" && packet_type != "clr") {
+    if (packet_type != "set" && packet_type != "get" && packet_type != "del" & packet_type != "siz" && packet_type != "clr" && packet_type != "sts") {
         return {
             type: "unknown",
             data: null
@@ -26,6 +26,7 @@ module.exports = PacketParser = (packet) => {
             }
             break;
         case "siz":
+        case "sts":
         case "clr":
             packet_data = { value: "ok" }
             break;
